@@ -112,9 +112,15 @@ const checkIfWin = function () {
     eight !== "" &&
     nine !== "";
 
-  const endGame = function (msg) {
+  const stopClick = function(){
     for (let i = 0; i < square.length; i++) {
-      square[i].classList.add("filter", "unclickable");
+      square[i].classList.add("unclickable");
+    }
+  }
+
+  const endGame = function () {
+    for (let i = 0; i < square.length; i++) {
+      square[i].classList.add("filter");
     }
   };
 
@@ -159,6 +165,7 @@ const checkIfWin = function () {
   setTimeout(() => {}, "1000");
 
   if (threeInLine) {
+    stopClick();
     turn === 1
       ? ((playerOneScore += 1),
         localStorage.setItem("playerOneScore", playerOneScore),
@@ -178,7 +185,6 @@ const checkIfWin = function () {
   }
 
   if (!threeInLine && AllFull) {
-
     setTimeout(() => {
       endGame();
       msg.innerHTML = "平手";
