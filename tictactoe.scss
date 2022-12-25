@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.startMenu {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  flex-wrap: wrap;
+
+  &__title {
+    width: 100%;
+    font-size: 100px;
+    text-align: center;
+    align-self: center;
+  }
+
+  &__buttonGroup {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 300px;
+  }
+
+  &__button {
+    color: white;
+    font-size: 50px;
+    padding: 30px;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__start {
+    background-color: rgb(41, 158, 86);
+  }
+
+  &__intro {
+    background-color: rgb(209, 145, 66);
+  }
+}
+
+.choose {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__select {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    &__title {
+      width: 100%;
+      font-size: 5rem;
+      text-align: center;
+      background: linear-gradient(to right, #282e48, #13476d);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &__symbol {
+      text-align: center;
+      width: 25%;
+      font-size: 200px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+  }
+  .circle {
+    color: rgb(0, 200, 200);
+  }
+
+  .cross {
+    color: rgb(145, 242, 0);
+  }
+}
+
+.tikBoard {
+  height: 100vh;
+  // margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  // margin-bottom: 30px;
+
+  &__board {
+    position: relative;
+
+    width: 500px;
+    height: 500px;
+    background-color: rgb(170, 199, 113);
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+  &__square {
+    border-bottom: 1px solid black;
+    width: 33.333333%;
+    height: 33.33333%;
+    position: relative;
+    transition: all 1.5s;
+  }
+
+  &__square:nth-child(odd) {
+    background-color: beige;
+  }
+
+  &__square:nth-child(1),
+  &__square:nth-child(2),
+  &__square:nth-child(3) {
+    border-top: 1px solid black;
+  }
+
+  &__square:nth-child(1),
+  &__square:nth-child(n + 1) {
+    border-left: 1px solid black;
+  }
+
+  &__square:nth-child(3),
+  &__square:nth-child(3n + 3) {
+    border-right: 1px solid black;
+  }
+
+  &__score {
+    font-size: 30px;
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: -50px;
+  }
+
+  &__check {
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &__result {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    position: absolute;
+    transition: all 3s;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  &__control {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    &__button {
+      color: white;
+      font-size: 20px;
+      border: 0;
+      padding: 20px 50px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      cursor: pointer;
+    }
+
+    &__again {
+      background-color: rgb(33, 92, 188);
+      width: 500px;
+    }
+
+    &__reset {
+      background-color: rgb(68, 124, 3);
+      width: 200px;
+    }
+
+    &__return {
+      background-color: rgb(194, 133, 35);
+      width: 200px;
+    }
+  }
+}
+
+.filter {
+  filter: blur(15px);
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+.none {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .startMenu {
+    &__buttonGroup {
+      gap: 100px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .startMenu {
+    &__buttonGroup {
+      gap: 0px;
+    }
+
+    &__button {
+      display: inline-block;
+      width: 350px;
+      padding-left: 30px;
+    }
+  }
+
+  .choose {
+    &__select {
+      &__title {
+        font-size: 55px;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .startMenu {
+    &__title {
+      font-size: 6rem;
+    }
+
+    &__button {
+      font-size: 4rem;
+    }
+  }
+  .tikBoard {
+    &__board {
+      width: 400px;
+      height: 400px;
+    }
+
+    &__score {
+      font-size: 25px;
+    }
+
+    &__check {
+      font-size: 80px;
+    }
+
+    &__control {
+      &__reset,
+      &__return {
+        width: 180px;
+      }
+    }
+  }
+
+  .choose {
+    &__select {
+      &__title {
+        font-size: 40px;
+      }
+
+      &__symbol {
+        font-size: 150px;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .startMenu {
+    &__title {
+      font-size: 4.8rem;
+    }
+
+    &__button {
+      font-size: 3rem;
+    }
+  }
+
+  .tikBoard {
+    &__board {
+      width: 350px;
+      height: 350px;
+    }
+
+    &__check {
+      font-size: 60px;
+    }
+
+    &__control {
+      justify-content: center;
+      &__button {
+        width: 200px;
+      }
+    }
+  }
+
+  .startMenu {
+    &__button {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .tikBoard {
+    &__board {
+      width: 300px;
+      height: 300px;
+    }
+
+    &__score {
+      font-size: 20px;
+    }
+
+    &__check {
+      font-size: 30px;
+    }
+  }
+
+  .choose {
+    &__select {
+      &__title {
+        font-size: 35px;
+      }
+    }
+  }
+}

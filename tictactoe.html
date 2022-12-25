@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./tictactoe.css" />
+  </head>
+  <body>
+    <div class="startMenu">
+      <h1 class="startMenu__title">圈圈叉叉</h1>
+
+      <div class="startMenu__buttonGroup">
+        <button class="startMenu__button startMenu__start">
+          <p class="startMenu__text">開始遊戲</p>
+        </button>
+        <!-- <button class="startMenu__button startMenu__intro">
+          <p class="startMenu__text">遊戲說明</p>
+        </button> -->
+      </div>
+    </div>
+
+    <div class="choose none">
+      <div class="choose__select">
+        <p class="choose__select__title">請選擇先手的圖案</p>
+        <p class="choose__select__symbol circle">&cir;</p>
+        <p class="choose__select__symbol cross">&times;</p>
+      </div>
+    </div>
+
+    <div class="tikBoard none">
+      <div class="tikBoard__board">
+        <div class="tikBoard__square"><p class="tikBoard__check"></p></div>
+        <div class="tikBoard__square"><p class="tikBoard__check"></p></div>
+        <div class="tikBoard__square"><p class="tikBoard__check"></p></div>
+        <div class="tikBoard__square"><p class="tikBoard__check"></p></div>
+        <div class="tikBoard__square"><p class="tikBoard__check"></p></div>
+        <div class="tikBoard__square"><p class="tikBoard__check"></p></div>
+        <div class="tikBoard__square"><p class="tikBoard__check"></p></div>
+        <div class="tikBoard__square"><p class="tikBoard__check"></p></div>
+        <div class="tikBoard__square"><p class="tikBoard__check"></p></div>
+        <div class="tikBoard__score">
+          <p class="tikBoard__score__scoreOne">
+            先手<span id="player-one-symbol">test1</span>：<span class="tikBoard__score__team" id="player-one"></span>分
+          </p>
+          <p class="tikBoard__score__scoreTwo">
+            後手<span id="player-two-symbol">test2</span>：<span class="tikBoard__score__team" id="player-two"></span>分
+          </p>
+        </div>
+        <div class="tikBoard__result"><p></p></div>
+        <div class="tikBoard__control">
+          <button class="tikBoard__control__button tikBoard__control__again">
+            棋盤重置
+          </button>
+          <button class="tikBoard__control__button tikBoard__control__reset">
+             分數重置
+          </button>
+          <button class="tikBoard__control__button tikBoard__control__return">
+            回主選單
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./tictactoe.js"></script>
+  </body>
+</html>
